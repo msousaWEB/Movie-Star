@@ -114,10 +114,10 @@
                                     <input type="submit" class="btn card-btn" style="padding: auto;" value="Alterar Senha">
                                 </form>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
         <div class="col">
             <div class="profile-user-status">
