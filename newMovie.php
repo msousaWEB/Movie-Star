@@ -17,7 +17,7 @@
                 <input type="hidden" name="type" value="create">
                 <div class="form-group">
                     <label for="title">Título:</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Título do filme...">
+                    <input required type="text" class="form-control" id="title" name="title" placeholder="Título do filme...">
                 </div>
                 <div class="form-group">
                     <label for="image">Pôster do filme:</label>
@@ -27,14 +27,14 @@
                     <div class="col">
                         <div class="form-group">
                         <label for="length">Duração:</label>
-                        <input type="text" class="form-control" id="length" name="length" placeholder="Duração do filme...">
+                        <input required type="text" class="form-control" id="length" name="length" placeholder="Duração do filme...">
                         </div>
                     </div>
                     <div class="col">
                         
                 <div class="form-group">
                     <label for="category">Categoria:</label>
-                    <select name="category" id="category" class="form-control category-control">
+                    <select required name="category" id="category" class="form-control category-control">
                         <option selected value="">Selecione</option>
                         <option class="option-category" value="Ação">Ação</option>
                         <option class="option-category" value="Romance">Animação</option>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Sinopse:</label>
-                    <textarea name="description" id="description" rows="4" class="form-control" placeholder="Escreva uma descrição do filme..."></textarea>
+                    <textarea required name="description" id="description" rows="4" class="form-control" placeholder="Escreva uma descrição do filme..."></textarea>
                 </div>
                 <input type="submit" class="btn card-btn" value="Adicionar Filme">
             </form>
