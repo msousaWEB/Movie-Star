@@ -29,7 +29,6 @@
     $userData->name     = $name;
     $userData->lastname = $lastname;
     $userData->email    = $email;
-    $userData->bio      = $bio;
 
     $userDAO->update($userData);
 
