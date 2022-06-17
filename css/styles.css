@@ -142,6 +142,17 @@ body {
     background-position: center;
     margin: 15px auto;
 }
+
+#profile-image-user{
+    width: 200px;
+    height: 200px;
+    border: 8px solid #4C3A51;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 15px auto;
+}
+
 .edit-profile-page .card-btn {
     width: auto;
 }

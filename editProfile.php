@@ -120,7 +120,20 @@
                 </div>
         </div>
         <div class="col">
-            <h3>Perfil</h3>
+            <div class="profile-user-status">
+                <div class="row profile-image">
+                    <div id="profile-image-user" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>')"></div>
+                </div>
+                <div class="title" style="text-align: center;"><h4><?= $fullName ?></h4></div>
+                <div class="mx-auto" style="width: 400px;">
+                    <label for="bio">Biografia:</label>
+                    <textarea class="form-control textbio" readonly disabled name="bio" id="bio"><?= $userData->bio ?></textarea>
+                </div>
+                <div class="mx-auto" style="width: 400px;">
+                    <label for="email">Contato:</label>
+                    <input type="text" readonly class="form-control" id="email" name="email" placeholder="Digite o seu email" value="<?= $userData->email ?>">
+                </div>
+            </div>
         </div>
     </div>
 </div>
