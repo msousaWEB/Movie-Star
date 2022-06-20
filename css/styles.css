@@ -214,7 +214,7 @@ body {
     margin: 15px auto;
 }
 
-#profile-image-user{
+#profile-image-user {
     width: 200px;
     height: 200px;
     border: 8px solid #4C3A51;
@@ -224,7 +224,7 @@ body {
     margin: 15px auto;
 }
 
-.edit-profile-page .card-btn {
+.card-btn {
     width: auto;
 }
 
@@ -233,7 +233,7 @@ body {
     text-decoration: none;
 }
 
-.card-profile{
+.card-profile {
     text-align: left;
     text-decoration: none;
     background-color: transparent;
@@ -253,16 +253,16 @@ body {
     text-align: left;
 }
 
-.btn-link:hover{
+.btn-link:hover {
     text-decoration: none;
     color: darkgray;
 }
 
-.btn-link:focus{
+.btn-link:focus {
     text-decoration: none;
 }
 
-.btn-link:active{
+.btn-link:active {
     text-decoration: none;
 }
 
@@ -287,11 +287,11 @@ body {
 /*NEW MOVIE*/
 
 
-.page-title{
+.page-title {
     margin-top: 10px;
 }
 
-.page-title::after{
+.page-title::after {
     content: "";
     width: 300px;
     border-bottom: 2px solid #4C3A51;
@@ -300,31 +300,98 @@ body {
     padding-top: 7px;
 }
 
-.new-movie-container{
+.new-movie-container {
     text-align: center;
 }
 
-#add-movie-form{
+#add-movie-form {
     text-align: left;
 }
 
-.movie-image-container{
+.movie-image-container {
     height: 400px;
     min-width: 200px;
     background-position: center;
     background-size: cover;
 }
 
-.category-control{
+.category-control {
     cursor: pointer;
 }
 
-.form-control-file{
+.form-control-file {
    width: auto;
 }
 
-.form-control-file:hover{
+.form-control-file:hover {
     cursor: pointer;
+}
+
+/*DASHBOARD*/
+#add-movie-container {
+    text-align: right;
+}
+
+#movies-dashboard .table {
+    color: #fff;
+}
+
+#movies-dashboard .table th {
+    border-top: none;
+}
+
+#movies-dashboard .table tr{
+    padding: 15px 0;
+}
+
+.table-movie-title {
+    color: #fff;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.table-movie-title:hover {
+    color: #F5C518;
+}
+
+.actions-column {
+    max-width: 75px;
+    text-align: center;
+}
+
+.actions-column form {
+    display: inline-block;
+}
+
+.edit-btn, .delete-btn {
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: .3s;
+    border: none;
+    text-decoration: none;
+}
+
+.edit-btn {
+    background-color: #F5C518;
+    color: #000;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #000;
+}
+
+.edit-btn:hover {
+    background-color: #000;
+    color: #F5C518;
+    text-decoration: none;
+}
+.delete-btn:hover {
+    background-color: #000;
+    color: #dc3545;
+    text-decoration: none;
 }
 
 /*Footer*/
