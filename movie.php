@@ -23,6 +23,7 @@
     }
     //Checar se o filme é do usuário
     $userOwnsMovie = false;
+    $alreadyReviewed = false;
     if(!empty($userData)) {
         if($userData->id === $movie->users_id) {
             $userOwnsMovie = true;
@@ -51,6 +52,7 @@
         <div class="offset-md-1 col-md-10" id="reviews-container">
             <h3 id="reviews-title">Avaliações: </h3>
             <!--Verificar se o usuario pode realizar review-->
+            <?php if(!empty($userData) && !$userOwnsMovie && !$alreadyReviewed):?>
             <div class="col-md-12" id="review-form-container">
                 <h4>Envie a sua avaliação!</h4>
                 <p class="page-description">Deixe a sua nota e impressões sobre o filme!</p>
@@ -79,6 +81,7 @@
                     <input type="submit" class="btn card-btn" value="Enviar">
                 </form>
             </div>
+            <?php endif;?>
             <!--Comentários-->
             <div class="col-md-12 review">
                 <div class="row">

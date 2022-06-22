@@ -31,19 +31,18 @@
                         </div>
                     </div>
                     <div class="col">
-                        
-                <div class="form-group">
-                    <label for="category">Categoria:</label>
-                    <select required name="category" id="category" class="form-control category-control">
-                        <option selected value="">Selecione</option>
-                        <option class="option-category" value="Ação">Ação</option>
-                        <option class="option-category" value="Romance">Animação</option>
-                        <option class="option-category" value="Terror">Terror</option>
-                        <option class="option-category" value="Comédia">Comédia</option>
-                        <option class="option-category" value="Ficção Científica">Ficção Científica</option>
-                        <option class="option-category" value="Romance">Romance</option>
-                    </select>
-                </div>
+                        <div class="form-group">
+                            <label for="category">Categoria:</label>
+                            <select required name="category" id="category" class="form-control category-control">
+                                <option selected value="">Selecione</option>
+                                <option class="option-category" value="Ação">Ação</option>
+                                <option class="option-category" value="Animação">Animação</option>
+                                <option class="option-category" value="Terror">Terror</option>
+                                <option class="option-category" value="Comédia">Comédia</option>
+                                <option class="option-category" value="Ficção Científica">Ficção Científica</option>
+                                <option class="option-category" value="Romance">Romance</option>
+                            </select>
+                        </div>
                     </div>
                </div>
                 <div class="form-group">
