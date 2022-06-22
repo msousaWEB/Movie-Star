@@ -71,6 +71,22 @@ if ($type === "create"){
     } else {
         $message->setMessage("Informações requeridas faltando!", "error", "back");
     }
+} elseif ($type === "delete"){
+    //Recebe os dados do form
+    $id = filter_input(INPUT_POST, "id");
+    $movie = $movieDao->findById($id);
+
+    if($movie) {
+        //Verificar se o filme é deste usuário
+        if($movie->users_id === $userData->id) {
+            $movieDao->destroy($movie->id);
+        } else {
+            $message->setMessage("Você não tem permissão para realizar esta ação!", "error", "dashboard.php");
+        }
+    } else {
+        $message->setMessage("Você não tem permissão para realizar esta ação!", "error", "dashboard.php");
+    }
+
 } else {
      $message->setMessage("Informações invalidas!", "error", "index.php");
 }

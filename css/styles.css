@@ -120,6 +120,7 @@ body {
   .movie-card {
     background-color: #1A1A1A;
     width: 18%;
+    font-weight: bolder;
     margin-bottom: 30px;
     margin-left: 1%;
     margin-right: 1%;
@@ -418,35 +419,58 @@ body {
     display: inline-block;
 }
 
-.edit-btn, .delete-btn {
-    padding: 5px 5px;
-    border-radius: 5px;
-    margin: 0 5px;
-    font-weight: bold;
-    transition: .3s;
-    border: none;
-    text-decoration: none;
+.edit-btn,
+.delete-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: .5s;
 }
 
 .edit-btn {
-    background-color: #F5C518;
     color: #000;
-}
-
-.delete-btn {
-    background-color: #dc3545;
-    color: #000;
+    background-color: #f5c518;
+    border: 2px solid #f5c518;
+    text-decoration: none;
 }
 
 .edit-btn:hover {
-    background-color: #000;
-    color: #F5C518;
+    background-color: transparent;
+    color: #f5c518;
     text-decoration: none;
 }
+
+.delete-btn {
+    text-decoration: none;
+    background-color: #dc3545;
+    border: 2px solid #dc3545;
+    color: #000;
+}
+
 .delete-btn:hover {
     background-color: #000;
     color: #dc3545;
     text-decoration: none;
+    border-color: #dc3545;
+}
+/*MODAL*/
+
+.modal-header {
+    background-color: #4C3A51;
+    border: none;
+}
+
+.modal-body{
+    background-color: #1A1A1A;
+    color: #fff;
+    text-align: left;
+    min-height: 65vh;
+    padding: 40x;
+}
+
+.modal-footer {
+    background-color: #4C3A51;
+    border: none;
 }
 
 /*Footer*/
