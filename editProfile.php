@@ -59,7 +59,7 @@
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Alterar foto de perfil
+                            Bio e foto de perfil
                             </button>
                         </h5>
                     </div>
