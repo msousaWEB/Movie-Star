@@ -82,7 +82,7 @@ class UserDAO implements userDAOInterface {
 
         if($redirect){
             //Redireciona para o perfil do usuário
-            $this->message->setMessage("Dados atualizados!", "success", "editprofile.php");
+            $this->message->setMessage("Dados atualizados!", "success", "edit_profile.php");
         }
     }
 
@@ -120,7 +120,7 @@ class UserDAO implements userDAOInterface {
 
         if($redirect){
             //Redireciona para o perfil do usuario
-            $this->message->setMessage("Seja bem-vindo(a)!", "success", "editprofile.php");
+            $this->message->setMessage("Seja bem-vindo(a)!", "success", "edit_profile.php");
         }
     }
 
@@ -207,6 +207,6 @@ class UserDAO implements userDAOInterface {
         $criteria->execute();
 
         //Redireciona para o perfil do usuario
-        $this->message->setMessage("Senha alterada com sucesso!", "success", "editprofile.php");
+        $this->message->setMessage("Senha alterada com sucesso!", "success", "edit_profile.php");
     }
 }
