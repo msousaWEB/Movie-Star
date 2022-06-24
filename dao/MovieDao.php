@@ -141,6 +141,27 @@ class MovieDAO implements MovieDAOInterface {
 
     public function update(Movie $movie) {
 
+        $criteria = $this->conn->prepare("UPDATE movies SET
+        title = :title,
+        description = :description,
+        image = :image,
+        category = :category,
+        trailer = :trailer,
+        length = :length
+        WHERE id = :id
+        ");
+
+        $criteria->bindParam(":title", $movie->title);
+        $criteria->bindParam(":description", $movie->description);
+        $criteria->bindParam(":image", $movie->image);
+        $criteria->bindParam(":trailer", $movie->trailer);
+        $criteria->bindParam(":category", $movie->category);
+        $criteria->bindParam(":length", $movie->length);
+        $criteria->bindParam(":id", $movie->id);
+
+        $criteria->execute();
+        //Filme Adicionado
+        $this->message->setMessage("Seu filme foi atualizado com sucesso!", "success", "dashboard.php");
     }
 
     public function destroy($id) {
