@@ -1,7 +1,7 @@
 <?php
     require_once("models/user.php");
-    require_once("dao/UserDAO.php");
-    require_once("dao/MovieDAO.php");
+    require_once("controllers/userController.php");
+    require_once("controllers/movieController.php");
     require_once("globals.php");
     require_once("db.php");
     require_once("models/message.php");
