@@ -1,7 +1,7 @@
 <?php
 
 require_once("models/movie.php");
-require_once("models/Message.php");
+require_once("models/message.php");
 
 //Review DAO
 
