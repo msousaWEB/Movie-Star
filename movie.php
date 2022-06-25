@@ -1,7 +1,7 @@
 <?php
     require_once("templates/header.php");
     require_once("models/movie.php");
-    require_once("dao/MovieDAO.php");
+    require_once("dao/movieDAO.php");
 
     $movieDao = new MovieDAO($conn, $BASE_URL);
     //pegar id do filme

@@ -1,6 +1,6 @@
 <?php
  require_once("models/user.php");
- require_once("dao/UserDAO.php");
+ require_once("dao/userDAO.php");
  require_once("globals.php");
  require_once("db.php");
  require_once("models/message.php");
@@ -101,10 +101,10 @@
     $userDAO->changePassword($user);
 
   } else {
-    $message->setMessage("As senhas não conferem!", "error", "editprofile.php");
+    $message->setMessage("As senhas não conferem!", "error", "edit_profile.php");
   }
 
 
 } else {
-    $message->setMessage("Informações invalidas!", "error", "editprofile.php");
+    $message->setMessage("Informações invalidas!", "error", "edit_profile.php");
  }

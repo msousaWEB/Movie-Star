@@ -1,8 +1,8 @@
 <?php
     require_once("templates/header.php");
-    require_once("models/User.php");
-    require_once("dao/UserDAO.php");
-    require_once("dao/MovieDAO.php");
+    require_once("models/user.php");
+    require_once("dao/userDAO.php");
+    require_once("dao/movieDAO.php");
   
     $user = new User();
     $userDao = new UserDao($conn, $BASE_URL);
@@ -16,7 +16,7 @@
     <h2 class="section-title">Seus Filmes</h2>
     <p class="section-description">Adicione ou edite as informações sobre seus filmes!</p>
     <div class="col-md-12" id="add-movie-container">
-        <a href="<?= $BASE_URL ?>newmovie.php" class="btn card-btn">
+        <a href="<?= $BASE_URL ?>new_movie.php" class="btn card-btn">
             <i class="fas fa-plus"></i> Adicione mais filmes!
         </a>
     </div>

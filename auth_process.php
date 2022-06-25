@@ -1,7 +1,7 @@
 <?php
  
  require_once("models/user.php");
- require_once("dao/UserDAO.php");
+ require_once("dao/userDAO.php");
  require_once("globals.php");
  require_once("db.php");
  require_once("models/message.php");
@@ -64,7 +64,7 @@
         //Tentativa de autenticação
         if($userDAO->authenticateUser($email, $password)) {
 
-          $message->setMessage("", "", "editprofile.php");
+          $message->setMessage("", "", "edit_profile.php");
 
         } else {
           //Redireciona caso houver falha

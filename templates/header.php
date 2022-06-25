@@ -2,7 +2,7 @@
     require_once("globals.php");
     require_once("db.php");
     require_once("models/message.php");
-    require_once("dao/UserDAO.php");
+    require_once("dao/userDAO.php");
 
     $message = new Message($BASE_URL);
 
@@ -55,7 +55,7 @@
                     <?php if ($userData): ?>  
 
                     <li class="nav-item">
-                        <a href="<?=$BASE_URL?>newmovie.php" class="nav-link">
+                        <a href="<?=$BASE_URL?>new_movie.php" class="nav-link">
                             <i class="far fa-plus-square"></i> Adicionar
                         </a>
                     </li>      
@@ -63,7 +63,7 @@
                         <a href="<?=$BASE_URL?>dashboard.php" class="nav-link">Meus Filmes</a>
                     </li>      
                     <li class="nav-item">
-                        <a href="<?=$BASE_URL?>editprofile.php" class="nav-link bold">
+                        <a href="<?=$BASE_URL?>edit_profile.php" class="nav-link bold">
                             <?= $userData->name?>
                         </a>
                     </li>      
