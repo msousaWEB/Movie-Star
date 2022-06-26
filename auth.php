@@ -8,7 +8,7 @@
                 <div class="col-md-4" id="login-container">
                     <!--------------------------------------ENTRAR-------------------------------->
                     <h2>Entrar</h2>
-                    <form action="<?=$BASE_URL?>auth_process.php" method="POST">
+                    <form action="<?=$app?>auth_process.php" method="POST">
                     <input type="hidden" name="type" value="login">
                         <div class="form-group">
                             <label for="email">E-mail</label>
@@ -24,7 +24,7 @@
                 <div class="col-md-4" id="register-container">
                     <!--------------------------------------CRIAR CONTA-------------------------------->
                     <h2>Criar Conta</h2>
-                    <form action="<?=$BASE_URL?>auth_process.php" method="POST">
+                    <form action="<?=$app?>auth_process.php" method="POST">
                         <input type="hidden" name="type" value="register">
                         <div class="form-group">
                             <label for="email">E-mail</label>

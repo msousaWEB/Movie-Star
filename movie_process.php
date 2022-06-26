@@ -1,14 +1,14 @@
 <?php
     require_once("models/user.php");
-    require_once("controllers/userController.php");
-    require_once("controllers/movieController.php");
+    require_once("dao/userDAO.php");
+    require_once("dao/movieDAO.php");
     require_once("globals.php");
     require_once("db.php");
     require_once("models/message.php");
    
-    $message = new Message($BASE_URL);
-    $userDAO = new UserDAO($conn, $BASE_URL);
-    $movieDao = new MovieDAO($conn, $BASE_URL);
+    $message = new Message($app);
+    $userDAO = new UserDAO($conn, $app);
+    $movieDao = new MovieDAO($conn, $app);
 
     //Resgata o tipo do FORM
     $type = filter_input(INPUT_POST, "type");

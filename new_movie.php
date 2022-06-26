@@ -1,10 +1,10 @@
 <?php
     require_once("templates/header.php");
     require_once("models/user.php");
-    require_once("controllers/userController.php");
+    require_once("dao/userDAO.php");
   
     $user = new User();
-    $userDao = new UserDao($conn, $BASE_URL);
+    $userDao = new UserDao($conn, $app);
   
     $userData = $userDao->verifyToken(true);
 ?>
@@ -14,7 +14,7 @@
             <div class="offset-md-2 col-md-4 new-movie-container">
                 <h3 class="page-title">Adicionar Filmes</h3>
                 <p class="page-description">Compartilhe seus filmes favoritos e deixe a sua crítica!</p>
-                <form action="<?= $BASE_URL ?>movie_process.php" id="add-movie-form" method="POST" enctype="multipart/form-data">
+                <form action="<?= $app ?>movie_process.php" id="add-movie-form" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="type" value="create">
                     <div class="form-group">
                         <label for="title">Título:</label>

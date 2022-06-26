@@ -2,9 +2,9 @@
     require_once("globals.php");
     require_once("db.php");
     require_once("models/message.php");
-    require_once("controllers/userController.php");
+    require_once("dao/userDAO.php");
 
-    $message = new Message($BASE_URL);
+    $message = new Message($app);
 
     $flassMessage = $message->getMessage();
 
@@ -13,7 +13,7 @@
         $message->clearMessage();
     }
 
-    $userDao = new UserDAO($conn, $BASE_URL);
+    $userDao = new UserDAO($conn, $app);
     $userData = $userDao->verifyToken(false);
 
 
@@ -25,20 +25,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieStar</title>
-    <link rel="short icon" href="<?=$BASE_URL?>img/moviestar.ico">
+    <link rel="short icon" href="<?=$app?>img/moviestar.ico">
     <!--Bootstrap--> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.css" integrity="sha512-Ty5JVU2Gi9x9IdqyHN0ykhPakXQuXgGY5ZzmhgZJapf3CpmQgbuhGxmI4tsc8YaXM+kibfrZ+CNX4fur14XNRg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--FontAwesome--> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--CSS-->
-    <link rel="stylesheet" href="<?=$BASE_URL?>css/styles.css">
+    <link rel="stylesheet" href="<?=$app?>css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav id="main-navbar" class="navbar navbar-expand-lg">
-            <a href="<?=$BASE_URL?>" class="navbar-brand">
-                <img src="<?=$BASE_URL?>img/logo.svg" alt="MovieStar" id="logo">
+            <a href="<?=$app?>" class="navbar-brand">
+                <img src="<?=$app?>img/logo.svg" alt="MovieStar" id="logo">
                 <span id="moviestar-title">MovieStar</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,25 +55,25 @@
                     <?php if ($userData): ?>  
 
                     <li class="nav-item">
-                        <a href="<?=$BASE_URL?>new_movie.php" class="nav-link">
+                        <a href="<?=$app?>new_movie.php" class="nav-link">
                             <i class="far fa-plus-square"></i> Adicionar
                         </a>
                     </li>      
                     <li class="nav-item">
-                        <a href="<?=$BASE_URL?>dashboard.php" class="nav-link">Meus Filmes</a>
+                        <a href="<?=$app?>dashboard.php" class="nav-link">Meus Filmes</a>
                     </li>      
                     <li class="nav-item">
-                        <a href="<?=$BASE_URL?>edit_profile.php" class="nav-link bold">
+                        <a href="<?=$app?>edit_profile.php" class="nav-link bold">
                             <?= $userData->name?>
                         </a>
                     </li>      
                     <li class="nav-item">
-                        <a href="<?=$BASE_URL?>logout.php" class="nav-link">Sair</a>
+                        <a href="<?=$app?>logout.php" class="nav-link">Sair</a>
                     </li>    
 
                     <?php else: ?>  
                     <li class="nav-item">
-                        <a href="<?=$BASE_URL?>auth.php" class="btn card-btn">Entrar</a>
+                        <a href="<?=$app?>auth.php" class="btn card-btn">Entrar</a>
                     </li>    
                     <?php endif; ?>
                 </ul>

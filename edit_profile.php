@@ -2,10 +2,10 @@
   require_once("templates/header.php");
 
   require_once("models/user.php");
-  require_once("controllers/userController.php");
+  require_once("dao/userDAO.php");
 
   $user = new User();
-  $userDao = new UserDao($conn, $BASE_URL);
+  $userDao = new UserDao($conn, $app);
 
   $userData = $userDao->verifyToken(true);
 
@@ -33,7 +33,7 @@
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            <form action="<?= $BASE_URL ?>user_process.php" method="POST">
+                            <form action="<?= $app ?>user_process.php" method="POST">
                                 <input type="hidden" name="type" value="update">
                                     <div class="form-group">
                                         <label for="name">Nome:</label>
@@ -65,7 +65,7 @@
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                            <form action="<?= $BASE_URL ?>user_process.php" method="POST" enctype="multipart/form-data">
+                            <form action="<?= $app ?>user_process.php" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="type" value="update_profile">
                                     <div class="row">
                                         <div class="col">
@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <div id="profile-image-container" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>')"></div>
+                                            <div id="profile-image-container" style="background-image: url('<?= $app ?>img/users/<?= $userData->image ?>')"></div>
                                         </div>
                                     </div>
                                 <input type="submit" class="btn card-btn" value="Alterar">
@@ -101,7 +101,7 @@
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <div class="change-password-container">
-                                <form action="<?= $BASE_URL ?>user_process.php" method="POST">
+                                <form action="<?= $app ?>user_process.php" method="POST">
                                     <input type="hidden" name="type" value="change_password">
                                     <div class="form-group">
                                         <label for="password">Senha:</label>
@@ -122,7 +122,7 @@
         <div class="col">
             <div class="profile-user-status">
                 <div class="row profile-image">
-                    <div id="profile-image-user" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>')"></div>
+                    <div id="profile-image-user" style="background-image: url('<?= $app ?>img/users/<?= $userData->image ?>')"></div>
                 </div>
                 <div class="title" style="text-align: center;"><h4><?= $fullName ?></h4></div>
                 <div class="mx-auto" style="width: 400px;">

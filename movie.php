@@ -1,9 +1,9 @@
 <?php
     require_once("templates/header.php");
     require_once("models/movie.php");
-    require_once("controllers/movieController.php");
+    require_once("dao/movieDAO.php");
 
-    $movieDao = new MovieDAO($conn, $BASE_URL);
+    $movieDao = new MovieDAO($conn, $app);
     //pegar id do filme
     $id = filter_input(INPUT_GET, "id");
     $movie;
@@ -47,7 +47,7 @@
             <p><?= $movie->description ?></p>
         </div>
         <div class="col-md-4">
-            <div class="movie-image-container" style="background-image: url('<?= $BASE_URL ?>/img/movies/<?= $movie->image ?>');"></div>
+            <div class="movie-image-container" style="background-image: url('<?= $app ?>/img/movies/<?= $movie->image ?>');"></div>
         </div>
         <div class="offset-md-1 col-md-10" id="reviews-container">
             <h3 id="reviews-title">Avaliações: </h3>
@@ -56,7 +56,7 @@
             <div class="col-md-12" id="review-form-container">
                 <h4>Envie a sua avaliação!</h4>
                 <p class="page-description">Deixe a sua nota e impressões sobre o filme!</p>
-                <form  id="review-form" action="<?=$BASE_URL?>review_process.php" method="POST">
+                <form  id="review-form" action="<?=$app?>review_process.php" method="POST">
                     <input type="hidden" name="type" value="create">
                     <input type="hidden" name="movies_id" value="<?= $movie->id ?>">
                     <div class="form-group">
@@ -86,7 +86,7 @@
             <div class="col-md-12 review">
                 <div class="row">
                     <div class="col-md-1">
-                        <div class="profile-image-container review-image" style="background-image: url('<?=$BASE_URL?>img/users/user.png')"></div>
+                        <div class="profile-image-container review-image" style="background-image: url('<?=$app?>img/users/user.png')"></div>
                         <div class="col-md-9 author-details-container">
                             <h4 class="author-name"><a href="#">User testando</a></h4>
                             <p><i class="fas fa-star"></i> 9</p>

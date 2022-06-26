@@ -1,12 +1,12 @@
 <?php
     require_once("templates/header.php");
     require_once("models/user.php");
-    require_once("controllers/userController.php");
-    require_once("controllers/movieController.php");
+    require_once("dao/userDAO.php");
+    require_once("dao/movieDAO.php");
   
     $user = new User();
-    $userDao = new UserDao($conn, $BASE_URL);
-    $movieDao = new MovieDao($conn, $BASE_URL);
+    $userDao = new UserDao($conn, $app);
+    $movieDao = new MovieDao($conn, $app);
   
     $userData = $userDao->verifyToken(true);
     $userMovies = $movieDao->getMoviesByUserId($userData->id);
@@ -16,7 +16,7 @@
     <h2 class="section-title">Seus Filmes</h2>
     <p class="section-description">Adicione ou edite as informações sobre seus filmes!</p>
     <div class="col-md-12" id="add-movie-container">
-        <a href="<?= $BASE_URL ?>new_movie.php" class="btn card-btn">
+        <a href="<?= $app ?>new_movie.php" class="btn card-btn">
             <i class="fas fa-plus"></i> Adicione mais filmes!
         </a>
     </div>
@@ -31,7 +31,7 @@
             <tbody>
                 <?php foreach($userMovies as $movie): ?>
                 <tr>
-                    <td><a href="<?=$BASE_URL?>movie.php?id=<?= $movie->id ?>" class="table-movie-title"><?= $movie->title ?></a></td>
+                    <td><a href="<?=$app?>movie.php?id=<?= $movie->id ?>" class="table-movie-title"><?= $movie->title ?></a></td>
                     <td scope="row"><?= $movie->category ?></td>
                     <td><i class="fas fa-star"></i> 9</td>
                     <td class="actions-column">
@@ -42,7 +42,7 @@
                         <div class="modal fade" id="editmovie<?=$movie->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                    <form id="edit-movie-form" action="<?=$BASE_URL?>movie_process.php" method="POST" enctype="multipart/form-data">
+                                    <form id="edit-movie-form" action="<?=$app?>movie_process.php" method="POST" enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="container-fluid">
                                                 <div class="col-md-12">
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                      <!--    -->
-                        <form action="<?=$BASE_URL?>movie_process.php" method="POST">
+                        <form action="<?=$app?>movie_process.php" method="POST">
                             <input type="hidden" name="type" value="delete">
                             <input type="hidden" name="id" value="<?= $movie->id ?>"> 
                             <button type="submit" class="delete-btn">

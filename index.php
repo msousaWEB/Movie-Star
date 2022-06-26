@@ -1,9 +1,9 @@
 <?php
     require_once("templates/header.php");
-    require_once("controllers/movieController.php");
+    require_once("dao/movieDAO.php");
 
     //DAO dos filmes
-    $movieDao = new MovieDAO($conn, $BASE_URL);
+    $movieDao = new MovieDAO($conn, $app);
 
     $latestMovies       = $movieDao->getLatestMovies();
     $actionMovies       = $movieDao->getMoviesByCategory("Ação");
