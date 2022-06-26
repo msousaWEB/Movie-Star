@@ -2,7 +2,9 @@
     require_once("templates/header.php");
     require_once("models/movie.php");
     require_once("dao/movieDAO.php");
+    require_once("dao/reviewDAO.php");
 
+    $reviewDao = new ReviewDAO($conn, $app);
     $movieDao = new MovieDAO($conn, $app);
     //pegar id do filme
     $id = filter_input(INPUT_GET, "id");
@@ -30,6 +32,7 @@
         }
     }
     //Resgatar Reviews
+    $movieReviews = $reviewDao->getMoviesReview($movie->id);
 ?>
 
 <div id="main-container" class="container-fluid">
@@ -82,22 +85,13 @@
                 </form>
             </div>
             <?php endif;?>
-            <!--Comentários-->
-            <div class="col-md-12 review">
-                <div class="row">
-                    <div class="col-md-1">
-                        <div class="profile-image-container review-image" style="background-image: url('<?=$app?>img/users/user.png')"></div>
-                        <div class="col-md-9 author-details-container">
-                            <h4 class="author-name"><a href="#">User testando</a></h4>
-                            <p><i class="fas fa-star"></i> 9</p>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="coment-title">Comentário:</p>
-                            <p>texto de comentarios</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--Foreach de comentários-->
+            <?php foreach ($movieReviews as $review): ?>
+                <?php require("templates/user_reviews.php"); ?>
+            <?php endforeach;?>
+            <?php if (count($movieReviews) == 0): ?>
+                <p class="empty-list">Seja o primeiro a deixar um comentário para este filme!</p>
+            <?php endif;?>
         </div>
     </div>
 </div>

@@ -3,7 +3,7 @@
 require_once("models/user.php");
 require_once("models/message.php");
 
-class UserDAO implements userDAOInterface {
+class UserDAO implements UserDAOInterface {
 
     private $conn;
     private $url;
