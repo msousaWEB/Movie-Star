@@ -52,9 +52,15 @@ class ReviewDAO implements ReviewDAOInterface {
 
         if($criteria->rowCount() > 0) {
             $reviewsData = $criteria->fetchAll();
+            $userDao = new UserDAO($this->conn, $this->url);
 
             foreach($reviewsData as $review) {
                 $reviewsObject = $this->buildReview($review);
+
+                //Dados do usuário
+                $user = $userDao->findById($reviewsObject->users_id);
+
+                $reviewsObject->user = $user;
 
                 $reviews[] = $reviewsObject;
             }
@@ -63,9 +69,46 @@ class ReviewDAO implements ReviewDAOInterface {
         return $reviews;
     }
     public function hasAlreadyReviewed($id, $userID) {
+        $criteria = $this->conn->prepare("SELECT * FROM reviews WHERE movies_id = :movies_id AND users_id = :users_id");
 
+        $criteria->bindParam(":movies_id", $id);
+        $criteria->bindParam(":users_id", $userID);
+
+        $criteria->execute();
+
+        if($criteria->rowCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
     }
     public function getRatings($id) {
 
+        $criteria = $this->conn->prepare("SELECT * FROM reviews WHERE movies_id = :movies_id");
+  
+        $criteria->bindParam(":movies_id", $id);
+  
+        $criteria->execute();
+  
+        if($criteria->rowCount() > 0) {
+  
+          $rating = 0;
+  
+          $reviews = $criteria->fetchAll();
+  
+          foreach($reviews as $review) {
+            $rating += $review["rating"];
+          }
+  
+          $rating = $rating / count($reviews);
+  
+        } else {
+  
+          $rating = "Não avaliado";
+  
+        }
+  
+        return $rating;
+  
     }
 }

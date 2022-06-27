@@ -33,7 +33,7 @@
                 <tr>
                     <td><a href="<?=$app?>movie.php?id=<?= $movie->id ?>" class="table-movie-title"><?= $movie->title ?></a></td>
                     <td scope="row"><?= $movie->category ?></td>
-                    <td><i class="fas fa-star"></i> 9</td>
+                    <td><i class="fas fa-star"></i><?=$movie->rating?></td>
                     <td class="actions-column">
                        <!-- Botão para acionar modal -->
                         <button type="button" class="btn edit-btn" data-toggle="modal" data-target="#editmovie<?=$movie->id?>"><i class="far fa-edit"></i></button>
