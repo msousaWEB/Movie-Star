@@ -7,7 +7,7 @@
 <div class="card movie-card">
     <div class="card-img-top" style="background-image: url('<?= $app ?>img/movies/<?= $movie->image ?>')"></div>
     <div class="card-body">
-        <p class="card-rating"><i class="fas fa-star"></i><span class="rating"> 9</span></p>
+        <p class="card-rating"><i class="fas fa-star"></i><span class="rating"><?=$movie->rating?></span></p>
         <h5 class="card-title">
             <a href="<?= $app ?>movie.php?id=<?= $movie->id ?>"><?= $movie->title ?></a>
         </h5>
