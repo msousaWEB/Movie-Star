@@ -33,6 +33,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="<?=$app?>css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
@@ -44,8 +45,8 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <form action="" method="GET" id="search-form" class="form-inline my-2 my-lg-0">
-                <input type="text" name="q" id="search" class="form-control mb-2" type="search" placeholder="Buscar Filmes" aria-label="Search">
+            <form action="<?=$app?>search.php" method="GET" id="search-form" class="form-inline my-2 my-lg-0">
+                <input type="text" name="q" id="search" class="auto form-control mb-2" type="search" placeholder="Buscar Filmes" aria-label="Search">
                 <button class="btn my-2 my-sm-0" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
